@@ -20,7 +20,7 @@ server.set('views', views);
 server.post('/convert', function (req, res) {
 	var html = req.body.html;
 
-    html2jade.convertHtml(html, {}, function (err, jade) {
+    html2jade.convertHtml(html, {donotencode:true}, function (err, jade) {
         res.json({ jade: jade });
     });
 });
